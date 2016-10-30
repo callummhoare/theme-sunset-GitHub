@@ -1,0 +1,93 @@
+/*
+
+███████╗██╗   ██╗███╗   ██╗███████╗███████╗████████╗        ███████╗ ██████╗ ██████╗          ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗                
+██╔════╝██║   ██║████╗  ██║██╔════╝██╔════╝╚══██╔══╝        ██╔════╝██╔═══██╗██╔══██╗        ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗               
+███████╗██║   ██║██╔██╗ ██║███████╗█████╗     ██║           █████╗  ██║   ██║██████╔╝        ██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝               
+╚════██║██║   ██║██║╚██╗██║╚════██║██╔══╝     ██║           ██╔══╝  ██║   ██║██╔══██╗        ██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗               
+███████║╚██████╔╝██║ ╚████║███████║███████╗   ██║   ███████╗██║     ╚██████╔╝██║  ██║███████╗╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝               
+╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝   ╚═╝   ╚══════╝╚═╝      ╚═════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝                
+
+
+
+
+ ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗     ██████╗ ██████╗ ███╗   ███╗    ██╗                                                                      
+██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗   ██╔════╝██╔═══██╗████╗ ████║   ██╔╝                                                                      
+██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝   ██║     ██║   ██║██╔████╔██║  ██╔╝                                                                       
+██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗   ██║     ██║   ██║██║╚██╔╝██║ ██╔╝                                                                        
+╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝██╗╚██████╗╚██████╔╝██║ ╚═╝ ██║██╔╝                                                                         
+ ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝                                                                          
+                                                                                                                                                          
+ ██████╗ █████╗ ██╗     ██╗     ██╗   ██╗███╗   ███╗███╗   ███╗██╗  ██╗ ██████╗  █████╗ ██████╗ ███████╗    ██╗                                           
+██╔════╝██╔══██╗██║     ██║     ██║   ██║████╗ ████║████╗ ████║██║  ██║██╔═══██╗██╔══██╗██╔══██╗██╔════╝   ██╔╝                                           
+██║     ███████║██║     ██║     ██║   ██║██╔████╔██║██╔████╔██║███████║██║   ██║███████║██████╔╝█████╗    ██╔╝                                            
+██║     ██╔══██║██║     ██║     ██║   ██║██║╚██╔╝██║██║╚██╔╝██║██╔══██║██║   ██║██╔══██║██╔══██╗██╔══╝   ██╔╝                                             
+╚██████╗██║  ██║███████╗███████╗╚██████╔╝██║ ╚═╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╔╝██║  ██║██║  ██║███████╗██╔╝                                              
+ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚═╝                                               
+                                                                                                                                                          
+████████╗██╗  ██╗███████╗███╗   ███╗███████╗      ███████╗██╗   ██╗███╗   ██╗███████╗███████╗████████╗       ██████╗ ██╗████████╗██╗  ██╗██╗   ██╗██████╗ 
+╚══██╔══╝██║  ██║██╔════╝████╗ ████║██╔════╝      ██╔════╝██║   ██║████╗  ██║██╔════╝██╔════╝╚══██╔══╝      ██╔════╝ ██║╚══██╔══╝██║  ██║██║   ██║██╔══██╗
+   ██║   ███████║█████╗  ██╔████╔██║█████╗  █████╗███████╗██║   ██║██╔██╗ ██║███████╗█████╗     ██║   █████╗██║  ███╗██║   ██║   ███████║██║   ██║██████╔╝
+   ██║   ██╔══██║██╔══╝  ██║╚██╔╝██║██╔══╝  ╚════╝╚════██║██║   ██║██║╚██╗██║╚════██║██╔══╝     ██║   ╚════╝██║   ██║██║   ██║   ██╔══██║██║   ██║██╔══██╗
+   ██║   ██║  ██║███████╗██║ ╚═╝ ██║███████╗      ███████║╚██████╔╝██║ ╚████║███████║███████╗   ██║         ╚██████╔╝██║   ██║   ██║  ██║╚██████╔╝██████╔╝
+   ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝     ╚═╝╚══════╝      ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝   ╚═╝          ╚═════╝ ╚═╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ 
+
+
+#########   CODE START   #########
+
+####################################            UNSELECTED          ######################################
+
+TEXT COLOR WHITE */
+.flash,.listgroup-item,.security-history .security-history-timestamp,li.session-device.session-current .sessions-more-info,li.session-device.session-current .session-last-accessed,li.session-device,li.session-device.session-current .octicon,.billing-section .section-label,.billing-section .section-content,.boxed-group-inner .help,.menu-heading,.menu-item.selected,.note,.boxed-group-inner,.avatar-upload .upload-state p,table.files td.age,table.files td.message a,.user-mention, .team-mention,.commit-tease,ul.top-nav>li>button,.repo-list-description,.thread-subscription-status,.lead,.site-header-nav .nav-item,.exploregrid-item-meta,.exploregrid-item,.exploregrid-item-title,.header-logo-wordmark,.gist-banner,.vcard-detail .octicon,.vcard-username,.svg-tip,.underline-nav-item,.header-nav-link,.site-footer .octicon-mark-github,.reponav-item,.numbers-summary .octicon,.numbers-summary a,.repository-meta,.dropdown-caret,.site-footer,.header-logo-invertocat,body,.form-checkbox .note,.subhead-description{color: #fff}
+
+/* TEXT COLOR WHITE (important) */
+.text-gray-dark,.subnav-item,.text-gray,.muted-link{color: #fff !important;}
+
+/* FILLS SOME SVG ICONS */
+.profile-rollup-toggle,.calendar-graph text.wday,.calendar-graph text.month,.user-nav .octicon-plus{fill: #fff;}
+
+/* .75 opace (fill) */
+.site-header,.user-profile-sticky-bar::after{background-color: rgba(0,0,0,0.75);}
+
+/* REMOVES ALL BORDERS */
+.pagehead{border-bottom: 0px solid #000;}
+
+/* REMOVES THE BACKGROUND */
+#header,.shade-gradient,.gist-banner{background-image: none;}
+
+/* REMOVES THE BACKGROUND */
+.flash,li.session-device.session-current,.menu-item.selected,.menu,.menu-heading,.form-group .form-control,.readme .markdown-body,table.files,.commit-tease,.pricing-card,.thread-subscription-status,.repo-collection>ul,.blankslate,.gist-banner,.user-profile-nav,.boxed-group-inner,.boxed-group>h3,.filter-bar,.header,.repohead.experiment-repo-nav{background-color: rgba(0, 0, 0, 0);}
+
+/* REMOVES THE BACKGROUND (important) */
+.bg-white{background-color: rgba(0, 0, 0, 0) !important;}
+
+/* NORMAL BUTTON */
+.btn,.form-control,.BtnGroup-form:first-child .BtnGroup-item,.BtnGroup-form,.btn-sm
+{
+    background-color: rgba(0, 0, 0, 0);
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1));
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    border-radius: 0px;
+    color: #fff;
+    background-image: none;
+}
+
+/* BACKGROUND */
+body{
+height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat:no-repeat;
+	background: #000000;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQwJSIgc3RvcC1jb2xvcj0iIzI0MzM1YSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzNhNGM3NCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjcyMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmY3MjAwIiBzdG9wLW9wYWNpdHk9IjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmNzIwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgPC9saW5lYXJHcmFkaWVudD4KICA8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+background: -moz-linear-gradient(top, #000000 0%, #24335a 40%, #3a4c74 60%, #ff7200 100%, #ff7200 100%, #ff7200 100%) fixed;
+background: -webkit-linear-gradient(top, #000000 0%,#24335a 40%,#3a4c74 60%,#ff7200 100%,#ff7200 100%,#ff7200 100%) fixed;
+background: linear-gradient(to bottom, #000000 0%,#24335a 40%,#3a4c74 60%,#ff7200 100%,#ff7200 100%,#ff7200 100%) fixed;
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#ff7200',GradientType=0 ) fixed;}
+/*
+
+###############################         FOCUS           ###################################
+
+Remove background   */
+.form-group .form-control:focus{background-color: rgba(0, 0, 0, 0);}
